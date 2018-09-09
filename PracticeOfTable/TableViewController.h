@@ -10,4 +10,7 @@
 
 @interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property NSArray *nameOfUser;
+@property NSString *nameOfUserShownInLabel;
+
 @end

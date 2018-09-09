@@ -18,13 +18,16 @@
     UILabel *labelWithCodes;
 }
 
+@synthesize result;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _name.text = @"I add this label with Storyboard!";
+    _name.text = result;
     _name.font = [UIFont boldSystemFontOfSize: 15];
     _name.textColor = [UIColor orangeColor];
+    NSLog(@"%@", result);
     
     labelWithCodes = [[UILabel alloc] initWithFrame:CGRectMake(self.view.center.x - 100, self.view.center.y - 25, 200, 50)];
     labelWithCodes.text = @"I add this label with codes!";
@@ -32,6 +35,7 @@
     [self.view addSubview: labelWithCodes];
     
 }
+
 
 
 - (void)didReceiveMemoryWarning {

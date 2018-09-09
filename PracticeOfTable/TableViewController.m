@@ -7,14 +7,17 @@
 //
 
 #import "TableViewController.h"
+#import "ViewController.h"
 
 @interface TableViewController ()
-{
-    NSArray *nameOfUser;
-}
+
 @end
 
 @implementation TableViewController
+
+@synthesize nameOfUser;
+@synthesize nameOfUserShownInLabel;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,13 +50,31 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Name" forIndexPath: indexPath];
     
     cell.textLabel.text = nameOfUser[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@"My graduated profile photo (2 inch) copy.png"];
+    
+    /*//The codes below were found on https://stackoverflow.com/questions/3521310/how-to-increase-the-uitableview-separator-height
+    CGRect sizeRect = [UIScreen mainScreen].applicationFrame;
+    NSInteger separatorHeight = 10;
+    UIView * additionalSeparator = [[UIView alloc] initWithFrame:CGRectMake(0,cell.frame.size.height-separatorHeight,sizeRect.size.width,separatorHeight)];
+    additionalSeparator.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+    [cell addSubview:additionalSeparator];
+    // The codes above were found on stackoverflow.*/
     
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ViewController *vc = segue.destinationViewController;
+    vc.result = nameOfUserShownInLabel;
+}
+    
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    nameOfUserShownInLabel = nameOfUser[indexPath.row];
     [self performSegueWithIdentifier:@"toDetails" sender:self];
 }
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -92,11 +113,7 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+/
 */
 
 @end
