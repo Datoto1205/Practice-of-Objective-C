@@ -15,6 +15,7 @@
 		1B1C2E022143B625003491FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2E012143B625003491FE /* main.m */; };
 		1B1C2E0A2143B87D003491FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C2E092143B87C003491FE /* Info.plist */; };
 		1B1C2E0D2143BEC1003491FE /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2E0C2143BEC1003491FE /* TableViewController.m */; };
+		1B907C212146546300EF7B54 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B907C202146546300EF7B54 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		1B1C2E092143B87C003491FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B1C2E0B2143BEC1003491FE /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		1B1C2E0C2143BEC1003491FE /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		1B907C1F2146546300EF7B54 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		1B907C202146546300EF7B54 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				1B1C2E0B2143BEC1003491FE /* TableViewController.h */,
 				1B1C2E0C2143BEC1003491FE /* TableViewController.m */,
 				1B1C2DF82143B623003491FE /* Main.storyboard */,
+				1B907C1F2146546300EF7B54 /* TableViewCell.h */,
+				1B907C202146546300EF7B54 /* TableViewCell.m */,
 				1B1C2E012143B625003491FE /* main.m */,
 				1B1C2E092143B87C003491FE /* Info.plist */,
 			);
@@ -159,6 +164,7 @@
 				1B1C2DF72143B623003491FE /* ViewController.m in Sources */,
 				1B1C2E022143B625003491FE /* main.m in Sources */,
 				1B1C2DF42143B623003491FE /* AppDelegate.m in Sources */,
+				1B907C212146546300EF7B54 /* TableViewCell.m in Sources */,
 				1B1C2E0D2143BEC1003491FE /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,8 @@
 
 @synthesize nameOfUser;
 @synthesize nameOfUserShownInLabel;
+@synthesize detailsOfUser;
+@synthesize URLOfProfilePhoto;
 
 
 - (void)viewDidLoad {
@@ -24,6 +26,12 @@
     
     
     nameOfUser = @[@"Alan", @"Betty", @"Cindy", @"Gates"];
+    detailsOfUser = @[@"Professor", @"Student", @"Plumber", @"Teacher"];
+    URLOfProfilePhoto = @[
+                          @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537174487&di=5ca3b13d9a7fa73fbe3a794711155c92&imgtype=jpg&er=1&src=http%3A%2F%2Fs3.sinaimg.cn%2Fmiddle%2F934e18c4gaf63d64d73d2%26amp%3B690%26amp%3B690",
+                          @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4180850729,644251773&fm=26&gp=0.jpg",
+                          @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537174733&di=898d75069e6dd33cb5a82bb044cb48e3&imgtype=jpg&er=1&src=http%3A%2F%2Fww2.sinaimg.cn%2Fbmiddle%2F6b28963bjw1eg15cpbmp8j20e80pa40o.jpg",
+                          @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2491447484,571109371&fm=26&gp=0.jpg"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -47,11 +55,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Name" forIndexPath: indexPath];
     
-    cell.textLabel.text = nameOfUser[indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"My graduated profile photo (2 inch) copy.png"];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Name" forIndexPath: indexPath];
     
+    
+    
+    cell.titleLabel.text = nameOfUser[indexPath.row];
+    cell.discriptionLabel.text = detailsOfUser[indexPath.row];
+    //cell.onlyPhoto.image = [UIImage imageNamed:@"My graduated profile photo (2 inch) copy.png"];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLOfProfilePhoto[indexPath.row]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!connectionError) {
+            UIImage *img = [[UIImage alloc] initWithData:data];
+            cell.onlyPhoto.image = img;
+        }else{
+            NSLog(@"%@",connectionError);
+        }
+    }];
     /*//The codes below were found on https://stackoverflow.com/questions/3521310/how-to-increase-the-uitableview-separator-height
     CGRect sizeRect = [UIScreen mainScreen].applicationFrame;
     NSInteger separatorHeight = 10;
@@ -71,6 +92,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     nameOfUserShownInLabel = nameOfUser[indexPath.row];
     [self performSegueWithIdentifier:@"toDetails" sender:self];
+    
 }
 
 

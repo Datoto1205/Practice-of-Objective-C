@@ -10,7 +10,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *name;
-
+@property (weak, nonatomic) IBOutlet UIButton *anotherButtomOutlet;
 @end
 
 @implementation ViewController
@@ -19,6 +19,10 @@
 }
 
 @synthesize result;
+
+- (IBAction)anotherButtomAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:true];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +38,10 @@
     labelWithCodes.font = [UIFont boldSystemFontOfSize: 15];
     [self.view addSubview: labelWithCodes];
     
+    
+    _anotherButtomOutlet.layer.borderWidth = 1;
+    _anotherButtomOutlet.layer.borderColor = UIColor.grayColor.CGColor;
+    _anotherButtomOutlet.layer.cornerRadius = 10;
 }
 
 
@@ -43,8 +51,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)SetButtom {
-    
-}
+
 
 @end

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewCell.h"
+// Without this import, I could not customize my tableViewCell.
 
 @interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSArray *nameOfUser;
 @property NSString *nameOfUserShownInLabel;
+@property (strong, nonatomic) NSArray *detailsOfUser;
+@property (strong, nonatomic) NSArray *URLOfProfilePhoto;
 
 @end
