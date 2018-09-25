@@ -7,36 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "firstAnotherMFile.m"
 
-@interface testominy: NSObject {
-    int firstValueInInterface;
-    int secondValueInInterface;
-}
 
-- (int) setAValue: (int) parameterOne setBValue: (int) parameterTwo;
-- (int) setFirstValue;
-- (int) setSecondValue;
-- (int) aggregation;
-@end
-
-@implementation testominy
-- (void)setAValue:(int)parameterOne setBValue:(int)parameterTwo {
-    firstValueInInterface = parameterOne;
-    secondValueInInterface = parameterTwo;
-}
-
-- (int)setFirstValue {
-    return firstValueInInterface;
-}
-
-- (int)setSecondValue {
-    return secondValueInInterface;
-}
-
-- (int)aggregation {
-    return firstValueInInterface + secondValueInInterface;
-}
-@end
 
 
 
