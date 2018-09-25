@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface testominy: NSObject {
     int firstValueInInterface;
     int secondValueInInterface;
@@ -37,3 +38,11 @@
     return firstValueInInterface + secondValueInInterface;
 }
 @end
+
+
+
+
+
+
+
+

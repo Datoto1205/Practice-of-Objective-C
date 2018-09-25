@@ -8,13 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "firstAnotherMFile.m"
-
-
-
-
-
-
-
+#import "secondAnotherMFile.m"
+// Make sure that only one file could be compiled at the same time. Check the navigator bar in the left -> This project -> Targets -> Build Phases -> Compile Sources
 
 
 
@@ -79,6 +74,41 @@ int main() {
     [import setAValue:17 setBValue:24];
     
     NSLog(@"Sum of %d and %d equal to %d", [import setFirstValue], [import setSecondValue], [import aggregation]);
+    
+    
+    
+    // Automatic Reference Counting (ARC)
+    NSAutoreleasePool *pool;
+    pool = [[NSAutoreleasePool alloc] init];
+    // The objects which were created below would be in this pool.
+    
+    tryReleasePool *anotherImport = [tryReleasePool new];
+    // Initialize an object.
+    anotherImport.babyInteger = 2;
+    anotherImport.babyString = @", Yiha!";
+    [anotherImport printBabyInteger: 5];
+    [anotherImport printBabyString:@"China"];
+    
+    NSLog(@"Initial ARC is: %lu", [anotherImport retainCount]);
+    [anotherImport retain];
+    // "Retain" could increase the value of ARC.
+    NSLog(@"After retain for one time, the ARC is: %lu", [anotherImport retainCount]);
+    // "RetainCount" coulr return the value of ARC.
+    
+    [anotherImport release];
+    // "Release" could decrease the value of ARC.
+    NSLog(@"After release for one time, the ARC is: %lu", [anotherImport retainCount]);
+    [anotherImport release]; /* Dealloc */
+    NSLog(@"\n");
+    
+    [pool release];
+    // Destroy the pool.
+    //NSLog(@"%@", anotherImport.babyInteger);     /* Run this code would error because the variable which was in the pool was destroyed. */
+    
+    
+    
+    
+    
     
     return 0;
     
