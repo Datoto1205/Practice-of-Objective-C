@@ -20,7 +20,7 @@ int main() {
     // Hello World
     printf("Hello World\n");
     
-    // Declaration
+    // Declaration of Fundamental Variables
     int firstInteger = 1;
     char firstCharacter[4] = {'W', 'X', 'Y', 'Z'};
     double firstDouble = 1.0;
@@ -33,6 +33,45 @@ int main() {
     NSLog(@"%d", firstInteger);
     NSLog(@"%lf", firstDouble);
     //printf() function is a typical function in c, but NSLog() function is created from foundation of Objective-C.
+    
+    
+    // Declaration of Array
+    NSMutableArray *firstArray = [NSMutableArray arrayWithObjects:@"one", @"two", @"three", nil];
+    NSLog(@"\n");
+    NSLog(@"%lu", (unsigned long)[firstArray count]);
+    NSLog(@"%@", [firstArray objectAtIndex:2]);
+    // I had better store the data with NS type into NSArray, or some bugs would occurr.
+    
+    [firstArray addObject:@"four"];   /* Add more element in NSMutableArray, I could not do it in the normal NSArray. */
+    NSLog(@"%lu", (unsigned long)[firstArray count]);
+    NSLog(@"%@", [firstArray objectAtIndex:3]);
+    [firstArray removeObject:@"four"];
+    NSLog(@"%lu", (unsigned long)[firstArray count]);
+    
+    // Declaration of Dictionary
+    NSMutableDictionary *firstDictionary = [NSMutableDictionary dictionary];
+    NSNumber *firstValue = [NSNumber numberWithInt:1];
+    NSNumber *secondValue = [NSNumber numberWithInt:2];
+    NSNumber *thirdValue = [NSNumber numberWithInt:3];
+    [firstDictionary setValue:firstValue forKey:@"first"];
+    [firstDictionary setValue:secondValue forKey:@"second"];
+    [firstDictionary setValue:thirdValue forKey:@"third"];
+    NSLog(@"\n");
+    NSLog(@"The number of elements in this dictionary is:%lu", [firstDictionary count]);
+    NSLog(@"%@", [firstDictionary objectForKey:@"first"]);
+    // I only could store the data with the type of NS in the NSdictionary.
+    
+    // Pack Fundemental Variables into NSobject
+    NSNumber *firstPackedInteger = [NSNumber numberWithInteger:88];
+    NSNumber *firstPackedFloat = [NSNumber numberWithFloat:3.14];
+    NSNumber *firstPackedChar = [NSNumber numberWithChar:"A"];
+    NSNumber *firstPackedBool = [NSNumber numberWithBool:true];
+    NSArray *arrayWithDifferentData = [NSArray arrayWithObjects:firstPackedInteger, firstPackedFloat, firstPackedChar, firstPackedBool, nil];
+    NSLog(@"%lu", [arrayWithDifferentData count]);
+    NSLog(@"%@", [arrayWithDifferentData objectAtIndex:0]);
+    NSLog(@"%@", [arrayWithDifferentData objectAtIndex:1]);
+    NSLog(@"%@", [arrayWithDifferentData objectAtIndex:3]);
+    
     
     // For-loop
     NSLog(@"\n");
@@ -72,7 +111,8 @@ int main() {
     // Class
     testominy *import = [[testominy alloc] init];
     [import setAValue:17 setBValue:24];
-    
+    [import helloWorld];
+    // If I want to define a function, I need to do it in the part of interface and implementation.
     NSLog(@"Sum of %d and %d equal to %d", [import setFirstValue], [import setSecondValue], [import aggregation]);
     
     
@@ -114,6 +154,7 @@ int main() {
     
     // The tutorials I refer to: https://pydoing.blogspot.com/2012/07/objc-memory-management.html
 }
+
 
 
 

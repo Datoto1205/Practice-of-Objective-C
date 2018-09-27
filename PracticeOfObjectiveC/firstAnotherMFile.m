@@ -18,6 +18,7 @@
 - (int) setFirstValue;
 - (int) setSecondValue;
 - (int) aggregation;
+- (void) helloWorld;
 @end
 
 @implementation testominy
@@ -37,12 +38,8 @@
 - (int)aggregation {
     return firstValueInInterface + secondValueInInterface;
 }
+
+- (void)helloWorld {
+    NSLog(@"Hello World with the application of method in implementation!");
+}
 @end
-
-
-
-
-
-
-
-
