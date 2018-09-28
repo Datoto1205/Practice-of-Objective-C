@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "VirtualViewController 21-01-24-208.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -21,7 +22,16 @@
 @synthesize result;
 
 - (IBAction)anotherButtomAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:true];
+    //[self.navigationController popViewControllerAnimated:YES];
+    // The code above could return to the previous page.
+    
+    VirtualViewController *newViewController = [[VirtualViewController alloc] init];
+    [[self navigationController] pushViewController:newViewController animated:YES];
+    // The code above could push to next page with navigation bar.
+    
+    //[self presentModalViewController:newViewController animated:YES];
+    // The code above could push to next page without navigation bar.
+    
 }
 
 - (void)viewDidLoad {
@@ -50,6 +60,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 

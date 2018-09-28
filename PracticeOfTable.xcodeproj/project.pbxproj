@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B16D87C215E5EDF00185FAE /* VirtualViewController 21-01-24-220.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B16D87B215E5EDF00185FAE /* VirtualViewController 21-01-24-220.m */; };
 		1B1C2DF42143B623003491FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2DF32143B623003491FE /* AppDelegate.m */; };
 		1B1C2DF72143B623003491FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2DF62143B623003491FE /* ViewController.m */; };
 		1B1C2DFA2143B623003491FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C2DF82143B623003491FE /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B16D87A215E5EDF00185FAE /* VirtualViewController 21-01-24-208.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VirtualViewController 21-01-24-208.h"; sourceTree = "<group>"; };
+		1B16D87B215E5EDF00185FAE /* VirtualViewController 21-01-24-220.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VirtualViewController 21-01-24-220.m"; sourceTree = "<group>"; };
 		1B1C2DEF2143B623003491FE /* PracticeOfTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeOfTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1C2DF22143B623003491FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1B1C2DF32143B623003491FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				1B1C2DF62143B623003491FE /* ViewController.m */,
 				1B1C2E0B2143BEC1003491FE /* TableViewController.h */,
 				1B1C2E0C2143BEC1003491FE /* TableViewController.m */,
+				1B16D87A215E5EDF00185FAE /* VirtualViewController 21-01-24-208.h */,
+				1B16D87B215E5EDF00185FAE /* VirtualViewController 21-01-24-220.m */,
 				1B1C2DF82143B623003491FE /* Main.storyboard */,
 				1B907C1F2146546300EF7B54 /* TableViewCell.h */,
 				1B907C202146546300EF7B54 /* TableViewCell.m */,
@@ -165,6 +170,7 @@
 				1B1C2E022143B625003491FE /* main.m in Sources */,
 				1B1C2DF42143B623003491FE /* AppDelegate.m in Sources */,
 				1B907C212146546300EF7B54 /* TableViewCell.m in Sources */,
+				1B16D87C215E5EDF00185FAE /* VirtualViewController 21-01-24-220.m in Sources */,
 				1B1C2E0D2143BEC1003491FE /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
