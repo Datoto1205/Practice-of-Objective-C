@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B1C2DE02143B5C1003491FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2DDF2143B5C1003491FE /* main.m */; };
+		1BABC7D4215A5CAC0070CB6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2DDF2143B5C1003491FE /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		1B1C2DDC2143B5C1003491FE /* PracticeOfObjectiveC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PracticeOfObjectiveC; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1C2DDF2143B5C1003491FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BABC7CF215A5BD40070CB6F /* firstAnotherMFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstAnotherMFile.m; sourceTree = "<group>"; };
+		1BABC7D2215A5C7E0070CB6F /* secondAnotherMFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = secondAnotherMFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				1B1C2DDF2143B5C1003491FE /* main.m */,
+				1BABC7CF215A5BD40070CB6F /* firstAnotherMFile.m */,
+				1BABC7D2215A5C7E0070CB6F /* secondAnotherMFile.m */,
 			);
 			path = PracticeOfObjectiveC;
 			sourceTree = "<group>";
@@ -118,7 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B1C2DE02143B5C1003491FE /* main.m in Sources */,
+				1BABC7D4215A5CAC0070CB6F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +234,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -239,6 +244,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZZMY98FBG;
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +255,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZZMY98FBG;
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
