@@ -35,6 +35,9 @@ int main() {
     //printf() function is a typical function in c, but NSLog() function is created from foundation of Objective-C.
     
     
+    
+    
+    
     // Declaration of Array
     NSMutableArray *firstArray = [NSMutableArray arrayWithObjects:@"one", @"two", @"three", nil];
     NSLog(@"\n");
@@ -47,6 +50,10 @@ int main() {
     NSLog(@"%@", [firstArray objectAtIndex:3]);
     [firstArray removeObject:@"four"];
     NSLog(@"%lu", (unsigned long)[firstArray count]);
+    
+    
+    
+    
     
     // Declaration of Dictionary
     NSMutableDictionary *firstDictionary = [NSMutableDictionary dictionary];
@@ -61,6 +68,10 @@ int main() {
     NSLog(@"%@", [firstDictionary objectForKey:@"first"]);
     // I only could store the data with the type of NS in the NSdictionary.
     
+    
+    
+    
+    
     // Pack Fundemental Variables into NSobject
     NSNumber *firstPackedInteger = [NSNumber numberWithInteger:88];
     NSNumber *firstPackedFloat = [NSNumber numberWithFloat:3.14];
@@ -71,6 +82,25 @@ int main() {
     NSLog(@"%@", [arrayWithDifferentData objectAtIndex:0]);
     NSLog(@"%@", [arrayWithDifferentData objectAtIndex:1]);
     NSLog(@"%@", [arrayWithDifferentData objectAtIndex:3]);
+    
+    NSLog(@"%@", [NSNumber numberWithInteger:([firstPackedInteger integerValue] + 12)]);
+    NSLog(@"%@", [NSNumber numberWithFloat:([firstPackedFloat floatValue] + 10)]);
+    // NSNumber could not be calculated directly. I need to use "typeValue" to extract it first.
+    
+    NSString *NSIntegerToNStringType = [NSString stringWithFormat:@"%ld", (long)[firstPackedInteger integerValue]];
+    NSLog(@"The string type is: \"%@\"", NSIntegerToNStringType);   /* Convert NSInteger into NSString. */
+    NSNumber *NSStringToNSIntegerType = [NSNumber numberWithInteger:[NSIntegerToNStringType intValue]];
+    NSLog(@"The integer type is: %@", NSStringToNSIntegerType);     /* Convert NSString into NSInteger. */
+    
+    // NSString
+    NSLog(@"%lu", (unsigned long)[firstString length]);
+    NSLog(@"%c", [firstString characterAtIndex: 1]);   /* I could not use "%d" here. */
+    // Which character should I type after "%"? => Refer to here: https://pydoing.blogspot.com/2012/08/objc-NSLog.html
+    // How to transform different type of NSData? => Refer to here: http://www.cnblogs.com/csj007523/archive/2012/07/16/2593269.html
+    NSLog(@"\n");
+    
+    
+    
     
     
     // For-loop
@@ -103,17 +133,22 @@ int main() {
         firstBooling = false;
     }
     
-    // NSString
-    NSLog(@"%lu", (unsigned long)[firstString length]);
-    NSLog(@"%c", [firstString characterAtIndex: 1]);   /* I could not use "%d" here. */
-    // Which character should I type after "%"? => Refer to here: https://pydoing.blogspot.com/2012/08/objc-NSLog.html
+    
+    
+    
     
     // Class
     testominy *import = [[testominy alloc] init];
     [import setAValue:17 setBValue:24];
-    [import helloWorld];
+    
+    [import instanceMethod];
     // If I want to define a function, I need to do it in the part of interface and implementation.
+    // If I want to call a instance method, after I declared the function with the beginning of "-" in the part of interface and implementation, I need to instance the class first. Afterward, I could called it with instance.
     NSLog(@"Sum of %d and %d equal to %d", [import setFirstValue], [import setSecondValue], [import aggregation]);
+    [testominy classMethod];
+    // If I want to call a class method, after I declared the function with the beginning of "+" in the part of interface and implementation, I could called it with the class directly.
+    
+    
     
     
     
@@ -124,7 +159,7 @@ int main() {
     
     tryReleasePool *anotherImport = [tryReleasePool new];
     // Initialize an object.
-    anotherImport.babyInteger = 2;
+    anotherImport.babyInteger = [NSNumber numberWithInteger:2];
     anotherImport.babyString = @", Yiha!";
     [anotherImport printBabyInteger: 5];
     [anotherImport printBabyString:@"China"];
@@ -144,7 +179,6 @@ int main() {
     [pool release];
     // Destroy the pool.
     //NSLog(@"%@", anotherImport.babyInteger);     /* Run this code would error because the variable which was in the pool was destroyed. */
-    
     
     
     

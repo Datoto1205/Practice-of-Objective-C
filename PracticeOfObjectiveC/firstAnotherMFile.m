@@ -18,7 +18,9 @@
 - (int) setFirstValue;
 - (int) setSecondValue;
 - (int) aggregation;
-- (void) helloWorld;
+- (void) instanceMethod;
++ (void) classMethod;
+
 @end
 
 @implementation testominy
@@ -39,7 +41,12 @@
     return firstValueInInterface + secondValueInInterface;
 }
 
-- (void)helloWorld {
-    NSLog(@"Hello World with the application of method in implementation!");
+- (void)instanceMethod {
+    NSLog(@"Hello World with the application of method in implementation! Called the instance method successfully.");
 }
+
++ (void)classMethod {
+    NSLog(@"Hello, Objective-C! Called the class method successfully.");
+}
+
 @end

@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface tryReleasePool: NSObject
-@property int babyInteger;
-@property NSString *babyString;
+@property (weak, nonatomic) NSNumber* babyInteger;
+@property (weak, nonatomic) NSString *babyString;
+// I could use "@property" to declare variables in OC. In Swift, I only need to use "var" or "let".
 
 
 -(void) printBabyInteger: (int) inputNumber;
@@ -28,14 +29,14 @@
 
 - (void)printBabyInteger:(int) inputNumber {
     int previousInputNumber = inputNumber;
-    inputNumber = inputNumber * babyInteger;
-    NSLog(@"\nThe product of %d and %d is: %d", previousInputNumber, babyInteger ,inputNumber);
+    inputNumber = inputNumber * (int)[babyInteger integerValue];
+    NSLog(@"\nThe product of %d and %@ is: %d", previousInputNumber, babyInteger ,inputNumber);
 }
 
 - (void)printBabyString:(NSString *) inputString {
     
     inputString = [inputString stringByAppendingString: babyString];
-    NSLog(inputString);
+    NSLog(@"%@", inputString);
 }
 
 @end
